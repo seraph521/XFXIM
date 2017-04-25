@@ -295,8 +295,9 @@ static NSString * CONVERSATION_CELL = @"conversation_cell";
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    IMTextMessageCell * textCell = [tableView dequeueReusableCellWithIdentifier:TEXT_MESSAGE_CELL];
     IMMessage * message = self.messageArray[indexPath.row];
+    IMTextMessageCell * textCell = [tableView dequeueReusableCellWithIdentifier:TEXT_MESSAGE_CELL];
+    
     textCell.message = message;
     return textCell;
 }
@@ -307,6 +308,27 @@ static NSString * CONVERSATION_CELL = @"conversation_cell";
 
     [self.contentTextView resignFirstResponder];
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    IMMessage * message = self.messageArray[indexPath.row];
+    
+    if([message.type integerValue] == kIMMessageTypeText){
+    
+        return [tableView fd_heightForCellWithIdentifier:TEXT_MESSAGE_CELL configuration:^(id cell) {
+            ((IMTextMessageCell *) cell).message = message;
+        }];
+    }else{
+    
+        return 0;
+    }
+    
+}
+
+
+
+
+
 
 #pragma mark - registerNotification
 - (void)registerNotification{
@@ -412,7 +434,7 @@ static NSString * CONVERSATION_CELL = @"conversation_cell";
     if(textView.text.length > 0 && [text isEqualToString:@"\n"]){
         BOOL isGroup = [self.conversation.type integerValue]  == kIMConversationTypeGroup;
         //用户点击了发送，执行文字消息发送
-        [[IMChatService sharedInstance] sendTextMessageToUser:isGroup?@"":[NSString stringWithFormat:@"%zd",self.conversation.user.uid ] withConversationId:self.conversation.conversationId andText:textView.text isGroup:isGroup];
+        [[IMChatService sharedInstance] sendTextMessageToUser:isGroup?@"":[NSString stringWithFormat:@"%zd",[self.conversation.user.uid integerValue] ] withConversationId:self.conversation.conversationId andText:textView.text isGroup:isGroup];
         //清空文字输入
         self.contentTextView.text = @"";
         [((EvaGrowingTextView *)textView) manualLayoutSubViews];

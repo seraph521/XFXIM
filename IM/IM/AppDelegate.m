@@ -43,8 +43,10 @@
     if(!userModel){
     
         IMLoginUserModel * user = [[IMLoginUserModel alloc] init];
-        user.uname = @"懒羊羊";
-        user.uid = 0227;
+        user.uname = @"小懒";
+        user.uid = 321;
+//        user.uname = @"懒羊羊";
+//        user.uid = 123;
         [IMLoginUserModelArchieveTool userInfoAchieveToFile:user];
     }
     //开启IM服务

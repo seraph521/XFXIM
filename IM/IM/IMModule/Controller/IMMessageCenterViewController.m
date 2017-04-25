@@ -32,14 +32,17 @@ static NSString * CONVERSATION_CELL = @"conversation_cell";
     
         _friendsArray = [NSMutableArray array];
         IMLoginUserModel * model1 = [[IMLoginUserModel alloc] init];
-        model1.uid = 1234;
-        model1.uname = @"小懒";
-        IMLoginUserModel * model2 = [[IMLoginUserModel alloc] init];
-        model2.uid = 1235;
-        model2.uname = @"短短";
+        model1.uid = 123;
+        model1.uname = @"懒羊羊";
+//         model1.uid = 321;
+//         model1.uname = @"小懒";
+
+//        IMLoginUserModel * model2 = [[IMLoginUserModel alloc] init];
+//        model2.uid = 1235;
+//        model2.uname = @"短短";
         
         [_friendsArray addObject:model1];
-        [_friendsArray addObject:model2];
+ //       [_friendsArray addObject:model2];
     }
     return _friendsArray;
 }

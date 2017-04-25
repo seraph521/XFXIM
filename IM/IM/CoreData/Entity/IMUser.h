@@ -15,6 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface IMUser : NSManagedObject
 
+- (void)setupUserWithInfoDict:(NSDictionary *)infoDict;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

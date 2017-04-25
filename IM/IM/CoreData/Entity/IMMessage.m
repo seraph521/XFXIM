@@ -96,4 +96,61 @@
     }
 }
 
+#pragma mark - 消息接收时处理
+- (IMMessage *)setupWithTypedMessage:(AVIMTypedMessage *)message{
+ 
+    self.attrDict = message.attributes;
+    
+    if(message.mediaType == kAVIMMessageMediaTypeAudio){
+        self.type = @(kIMMessageTypeVoice);
+    }else if(message.mediaType == kAVIMMessageMediaTypeImage){
+        self.type = @(kIMMessageTypeImage);
+    }else if(message.mediaType == kAVIMMessageMediaTypeVideo){
+        self.type = @(kIMMessageTypeVideo);
+    }else if(message.mediaType == kAVIMMessageMediaTypeText){
+        self.type = @(kIMMessageTypeText);
+    }else if(message.mediaType == kAVIMMessageMediaTypeLocation){
+        self.type = @(kIMMessageTypeLocation);
+    }
+    
+    //设置消息状态
+    self.status = @(kIMMessageStatusUnReaded);
+    
+    if(message.mediaType == kAVIMMessageMediaTypeText){
+        self.content = message.text;
+    }
+    
+    //设置更新时间和创建时间
+    self.undateTime = @([[NSDate date] timeIntervalSince1970] * 1000);
+    self.createTime = @(message.sendTimestamp);
+    
+    //设置发送人和接收人
+    IMLoginUserModel * loginModel = [IMLoginUserModelArchieveTool userInfoUnAchieveFromFile];
+    self.fromPeerId = @([message.clientId integerValue]);
+    self.toPeerId = @(loginModel.uid);
+    self.friendId = @([message.clientId integerValue]);
+    self.messageId = message.messageId;
+    self.sendFromMe = @(NO);
+//#warning 单聊这里要等服务器规划好conversation之后替换（暂且使用MD5(uid+ "_" +clientid)代替）
+    if([[attrDict valueForKey:@"isGroupMessage"] intValue] == 1){
+        self.conversationId = message.conversationId;
+    }else{
+        self.conversationId = [IMUtil md5:[NSString stringWithFormat:@"%zd_%zd",loginModel.uid,[message.clientId integerValue]]];
+    }
+    
+    //确定是否需要显示时间
+    [self confirmIfNeedToShowMessageTimeWithConversationId:self.conversationId];
+    
+    //绑定user
+    IMUser * user = [[IMDatabaseHelper sharedInstance] getUserWithUserId:[message.clientId integerValue]];
+    if(!user){
+        user = [IMUser MR_createEntityInContext:[NSManagedObjectContext MR_defaultContext]];
+    }
+    //设置属性数据
+    [user setupUserWithInfoDict:self.attrDict];
+    self.user = user;
+    
+    return self;
+}
+
 @end

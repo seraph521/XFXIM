@@ -11,4 +11,11 @@
 #import "IMMessage.h"
 @implementation IMUser
 
+- (void)setupUserWithInfoDict:(NSDictionary *)infoDict
+{
+    self.avatar = [infoDict objectForKey:@"avatar"];
+    self.nickname = [infoDict objectForKey:@"nickName"];
+    self.uid = @([[infoDict valueForKey:@"uid"] longLongValue]);
+    self.avatar = [infoDict valueForKey:@"avatar"] ;
+}
 @end

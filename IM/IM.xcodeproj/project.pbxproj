@@ -447,6 +447,7 @@
 				TargetAttributes = {
 					3CBA45011EA6F1A30037500C = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 92ZEU9UMWW;
 						ProvisioningStyle = Manual;
 					};
 				};
@@ -675,12 +676,16 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 92ZEU9UMWW;
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/IM/IM.pch";
 				INFOPLIST_FILE = IM/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Seraphic.IM;
+				PRODUCT_BUNDLE_IDENTIFIER = com.joym.bearadventure;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "6037d372-18f9-411b-9db5-d64936f48a88";
+				PROVISIONING_PROFILE_SPECIFIER = BearAdventure_Dev;
 			};
 			name = Debug;
 		};
@@ -690,12 +695,16 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 92ZEU9UMWW;
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/IM/IM.pch";
 				INFOPLIST_FILE = IM/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Seraphic.IM;
+				PRODUCT_BUNDLE_IDENTIFIER = com.joym.bearadventure;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "6037d372-18f9-411b-9db5-d64936f48a88";
+				PROVISIONING_PROFILE_SPECIFIER = BearAdventure_Dev;
 			};
 			name = Release;
 		};

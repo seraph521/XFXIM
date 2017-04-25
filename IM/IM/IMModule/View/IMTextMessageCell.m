@@ -85,7 +85,7 @@
     
     NSMutableAttributedString * contentText = [[NSMutableAttributedString alloc] initWithString:message.content];
     [contentText addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:16] range:NSMakeRange(0, contentText.length)];
-    [contentText addAttribute:NSForegroundColorAttributeName value:DreamColor(51, 51, 51) range:NSMakeRange(0, contentText.length)];
+    [contentText addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, contentText.length)];
     
     NSMutableParagraphStyle * style = [[NSMutableParagraphStyle alloc] init];
     style.lineSpacing = [UIView lf_sizeFromIphone6:5];
