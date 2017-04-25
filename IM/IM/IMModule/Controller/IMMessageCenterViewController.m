@@ -167,8 +167,8 @@ static NSString * CONVERSATION_CELL = @"conversation_cell";
 //    NSDateFormatter * dateFormatter = [[NSDateFormatter alloc] init];
 //    dateFormatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
 //    NSDate * recordDate = [dateFormatter dateFromString:model.push_datetime];
-//    int64_t timeStamp = [recordDate timeIntervalSince1970] * 1000;
-//    conversation.lastUpdateTime = @(timeStamp);
+      int64_t timeStamp = [[NSDate date] timeIntervalSince1970] * 1000;
+    conversation.lastUpdateTime = @(timeStamp);
     
     conversation.type = kIMConversationTypeSingle;
     //将该回话的未读数目置为0
@@ -180,7 +180,7 @@ static NSString * CONVERSATION_CELL = @"conversation_cell";
         user = [IMUser MR_createEntityInContext:[NSManagedObjectContext MR_defaultContext]];
     }
     user.nickname = model.uname;
-    user.uid = model.uid;
+    user.uid = @(model.uid);
     conversation.user = user;
     
     [[IMManager sharedInstance] setupChattingConversationId:conversation.conversationId];

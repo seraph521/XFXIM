@@ -27,4 +27,11 @@ typedef NS_ENUM(NSInteger,IMConvType){
 
 - (void)setupChattingConversationId:(NSString *)conversationId;
 
+//#pragma mark - 获取单人聊天会话
+//- (void)fetchConvWithConversationId:(NSString *)converstaionId callback:(AVIMConversationResultBlock)callback;
+//
+//- (void)fetchConvWithUserId:(NSString *)userId callback:(AVIMConversationResultBlock)callback;
+//#pragma mark - 获取聊天室会话
+//- (void)fetchChatRoomConversationWithChatRoomNum:(NSString *)chatRoomNum callback:(AVIMConversationResultBlock)callback;
+
 @end

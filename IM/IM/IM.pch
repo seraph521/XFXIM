@@ -33,6 +33,8 @@
 #import "IMLoginUserModelArchieveTool.h"
 #import "IMUtil.h"
 #import "IMDatabaseHelper.h"
+#import "IMNotificationDefine.h"
+#import "GDCacheService.h"
 
 #import "UITableView+FDTemplateLayoutCell.h"
 #import "Masonry.h"

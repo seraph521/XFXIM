@@ -2,7 +2,7 @@
 //  IMMediaFile+CoreDataProperties.h
 //  IM
 //
-//  Created by LT-MacbookPro on 17/4/21.
+//  Created by LT-MacbookPro on 17/4/24.
 //  Copyright © 2017年 XFX. All rights reserved.
 //
 
@@ -15,14 +15,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSFetchRequest<IMMediaFile *> *)fetchRequest;
 
-@property (nonatomic) int16_t duration;
-@property (nonatomic) double latitude;
+@property (nullable, nonatomic, copy) NSNumber *duration;
+@property (nullable, nonatomic, copy) NSNumber *latitude;
 @property (nullable, nonatomic, copy) NSString *local_source_url;
-@property (nonatomic) double longitude;
-@property (nonatomic) int16_t type;
 @property (nullable, nonatomic, copy) NSString *local_thumbnail_url;
+@property (nullable, nonatomic, copy) NSNumber *longitude;
 @property (nullable, nonatomic, copy) NSString *remote_source_url;
 @property (nullable, nonatomic, copy) NSString *remote_thumbnail_url;
+@property (nullable, nonatomic, copy) NSNumber *type;
 @property (nullable, nonatomic, retain) IMMessage *message;
 
 @end

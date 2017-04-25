@@ -2,7 +2,7 @@
 //  IMConversation+CoreDataProperties.m
 //  IM
 //
-//  Created by LT-MacbookPro on 17/4/21.
+//  Created by LT-MacbookPro on 17/4/24.
 //  Copyright © 2017年 XFX. All rights reserved.
 //
 

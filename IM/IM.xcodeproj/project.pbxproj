@@ -38,6 +38,7 @@
 		3CBA45481EA757580037500C /* IMChattingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CBA45471EA757580037500C /* IMChattingViewController.m */; };
 		3CBA454B1EA787B00037500C /* EvaGrowingTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CBA454A1EA787B00037500C /* EvaGrowingTextView.m */; };
 		3CBA454E1EA790E60037500C /* IMBaseMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CBA454D1EA790E60037500C /* IMBaseMessageCell.m */; };
+		3CFF11361EAD97E000C14136 /* GDCacheService.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CFF11351EAD97E000C14136 /* GDCacheService.m */; };
 		FE0F107E8239F947129A9F7A /* libPods-IM.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FD2D74AA990C4FC6B9CF9DC /* libPods-IM.a */; };
 /* End PBXBuildFile section */
 
@@ -103,6 +104,9 @@
 		3CBA454A1EA787B00037500C /* EvaGrowingTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EvaGrowingTextView.m; sourceTree = "<group>"; };
 		3CBA454C1EA790E60037500C /* IMBaseMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMBaseMessageCell.h; sourceTree = "<group>"; };
 		3CBA454D1EA790E60037500C /* IMBaseMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMBaseMessageCell.m; sourceTree = "<group>"; };
+		3CFF11311EAD91F700C14136 /* IMNotificationDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMNotificationDefine.h; sourceTree = "<group>"; };
+		3CFF11341EAD97E000C14136 /* GDCacheService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDCacheService.h; sourceTree = "<group>"; };
+		3CFF11351EAD97E000C14136 /* GDCacheService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDCacheService.m; sourceTree = "<group>"; };
 		6FD2D74AA990C4FC6B9CF9DC /* libPods-IM.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IM.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		964D3C3D0B7789391B6B62A0 /* Pods-IM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IM.release.xcconfig"; path = "Pods/Target Support Files/Pods-IM/Pods-IM.release.xcconfig"; sourceTree = "<group>"; };
 		9CA88B8B0545DD090A7308E7 /* Pods-IM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IM/Pods-IM.debug.xcconfig"; sourceTree = "<group>"; };
@@ -186,6 +190,8 @@
 		3C4CD7661EA8830A00AB3191 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				3CFF11341EAD97E000C14136 /* GDCacheService.h */,
+				3CFF11351EAD97E000C14136 /* GDCacheService.m */,
 				3C4CD7671EA8834100AB3191 /* IMLoginUserModelArchieveTool.h */,
 				3C4CD7681EA8834100AB3191 /* IMLoginUserModelArchieveTool.m */,
 				3C4CD76A1EA8892900AB3191 /* IMUtil.h */,
@@ -321,6 +327,7 @@
 			children = (
 				3CBA45081EA6F1A30037500C /* AppDelegate.h */,
 				3CBA45091EA6F1A30037500C /* AppDelegate.m */,
+				3CFF11311EAD91F700C14136 /* IMNotificationDefine.h */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -538,6 +545,7 @@
 				3CBA45451EA7425F0037500C /* UIView+LayoutFit.m in Sources */,
 				3CBA452F1EA6FD4B0037500C /* IMNavigationController.m in Sources */,
 				3C54F7901EA9DD70000675C2 /* IMUser+CoreDataProperties.m in Sources */,
+				3CFF11361EAD97E000C14136 /* GDCacheService.m in Sources */,
 				3CBA45421EA73CD60037500C /* IMMessageCenterViewController.m in Sources */,
 				3C54F78B1EA9DD70000675C2 /* IMMessage.m in Sources */,
 				3C54F7721EA9DC6A000675C2 /* IM.xcdatamodel in Sources */,

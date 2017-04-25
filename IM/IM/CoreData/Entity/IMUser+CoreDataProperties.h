@@ -2,7 +2,7 @@
 //  IMUser+CoreDataProperties.h
 //  IM
 //
-//  Created by LT-MacbookPro on 17/4/21.
+//  Created by LT-MacbookPro on 17/4/24.
 //  Copyright © 2017年 XFX. All rights reserved.
 //
 
@@ -16,10 +16,10 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSFetchRequest<IMUser *> *)fetchRequest;
 
 @property (nullable, nonatomic, copy) NSString *avatar;
-@property (nonatomic) int16_t gender;
+@property (nullable, nonatomic, copy) NSNumber *gender;
 @property (nullable, nonatomic, copy) NSString *nickname;
 @property (nullable, nonatomic, copy) NSString *sign;
-@property (nonatomic) int64_t uid;
+@property (nullable, nonatomic, copy) NSNumber *uid;
 @property (nullable, nonatomic, retain) IMConversation *conversation;
 @property (nullable, nonatomic, retain) NSSet<IMMessage *> *messages;
 

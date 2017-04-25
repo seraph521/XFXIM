@@ -2,7 +2,7 @@
 //  IMMessage+CoreDataProperties.h
 //  IM
 //
-//  Created by LT-MacbookPro on 17/4/21.
+//  Created by LT-MacbookPro on 17/4/24.
 //  Copyright © 2017年 XFX. All rights reserved.
 //
 
@@ -17,16 +17,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nullable, nonatomic, copy) NSString *content;
 @property (nullable, nonatomic, copy) NSString *conversationId;
-@property (nonatomic) int64_t createTime;
-@property (nonatomic) int64_t friendId;
-@property (nonatomic) int64_t fromPeerId;
+@property (nullable, nonatomic, copy) NSNumber *createTime;
+@property (nullable, nonatomic, copy) NSNumber *friendId;
+@property (nullable, nonatomic, copy) NSNumber *fromPeerId;
 @property (nullable, nonatomic, copy) NSString *messageId;
-@property (nonatomic) BOOL needShowmessageTime;
-@property (nonatomic) BOOL sendFromMe;
-@property (nonatomic) int16_t status;
-@property (nonatomic) int64_t toPeerId;
-@property (nonatomic) int16_t type;
-@property (nonatomic) int64_t undateTime;
+@property (nullable, nonatomic, copy) NSNumber *needShowmessageTime;
+@property (nullable, nonatomic, copy) NSNumber *sendFromMe;
+@property (nullable, nonatomic, copy) NSNumber *status;
+@property (nullable, nonatomic, copy) NSNumber *toPeerId;
+@property (nullable, nonatomic, copy) NSNumber *type;
+@property (nullable, nonatomic, copy) NSNumber *undateTime;
 @property (nullable, nonatomic, retain) IMMediaFile *midiaFile;
 @property (nullable, nonatomic, retain) IMUser *user;
 

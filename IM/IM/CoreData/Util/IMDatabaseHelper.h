@@ -20,4 +20,6 @@
 #pragma mark - 会话相关
 - (IMConversation *)getConversationWithId:(NSString *)conversationId;
 
+#pragma mark - 消息相关
+- (NSArray *)getFriendChatMessagesWithConversationId:(NSString *)conversationId page:(NSInteger)pageNum limit:(NSInteger)count;
 @end

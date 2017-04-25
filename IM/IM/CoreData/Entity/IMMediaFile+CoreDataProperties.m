@@ -2,7 +2,7 @@
 //  IMMediaFile+CoreDataProperties.m
 //  IM
 //
-//  Created by LT-MacbookPro on 17/4/21.
+//  Created by LT-MacbookPro on 17/4/24.
 //  Copyright © 2017年 XFX. All rights reserved.
 //
 
@@ -17,11 +17,11 @@
 @dynamic duration;
 @dynamic latitude;
 @dynamic local_source_url;
-@dynamic longitude;
-@dynamic type;
 @dynamic local_thumbnail_url;
+@dynamic longitude;
 @dynamic remote_source_url;
 @dynamic remote_thumbnail_url;
+@dynamic type;
 @dynamic message;
 
 @end

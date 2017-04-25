@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <AVOSCloudIM/AVOSCloudIM.h>
 
 
 typedef void(^sendTextMessageBlock)(AVIMConversation * conversation, NSString * text);

@@ -24,6 +24,8 @@
 
 @property (nonatomic,assign) BOOL needHideUserInfo;
 
+@property (nonatomic,strong) IMMessage * message;
+
 @property (nonatomic,strong) NSIndexPath * indexPath;
 
 @end

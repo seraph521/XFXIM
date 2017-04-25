@@ -9,8 +9,11 @@
 #import "IMChattingViewController.h"
 #import "EvaGrowingTextView.h"
 #import "IMBaseMessageCell.h"
+#import "IMTextMessageCell.h"
+#import "IMMessage.h"
 
 #define BASE_MESSAGE_CELL @"BASE_MESSAGE_CELL"
+#define TEXT_MESSAGE_CELL @"TEXT_MESSAGE_CELL"
 
 #define TEXTVIEW_HEIGHT      [UIView lf_sizeFromIphone6:35]
 #define INPUTBAR_HEIGHT      [UIView lf_sizeFromIphone6:55]
@@ -143,7 +146,7 @@ static NSString * CONVERSATION_CELL = @"conversation_cell";
     messageTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [messageTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:CONVERSATION_CELL];
     [messageTableView registerClass:[IMBaseMessageCell class] forCellReuseIdentifier:BASE_MESSAGE_CELL];
-//    [messageTableView registerClass:[GDVoiceMessageCell class] forCellReuseIdentifier:VOICE_MESSAGE_CELL];
+    [messageTableView registerClass:[IMTextMessageCell class] forCellReuseIdentifier:TEXT_MESSAGE_CELL];
 //    [messageTableView registerClass:[GDImageVideoMessageCell class] forCellReuseIdentifier:IMAGE_MESSAGE_CELL];
 //    [messageTableView registerClass:[GDLocationMessageCell class] forCellReuseIdentifier:LOCATION_MESSAGE_CELL];
     [self.view addSubview:messageTableView];
@@ -287,15 +290,15 @@ static NSString * CONVERSATION_CELL = @"conversation_cell";
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return 2;
+    return self.messageArray.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:CONVERSATION_CELL];
-    cell.textLabel.text = @"懒羊羊";
-    cell.backgroundColor = [UIColor clearColor];
-    return cell;
+    IMTextMessageCell * textCell = [tableView dequeueReusableCellWithIdentifier:TEXT_MESSAGE_CELL];
+    IMMessage * message = self.messageArray[indexPath.row];
+    textCell.message = message;
+    return textCell;
 }
 
 #pragma  mark - UITableViewDelegate
@@ -310,8 +313,41 @@ static NSString * CONVERSATION_CELL = @"conversation_cell";
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNewMessage:) name:NOTIFICATION_SEND_NEWMESSAGE object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNewMessage:) name:NOTIFICATION_RECEIVED_NEWMESSAGE object:nil];
 }
 
+#pragma mark - 消息接受与发送部分
+- (void)handleNewMessage:(NSNotification *)notification
+{
+    IMMessage * message = [notification.userInfo objectForKey:@"message"];
+    
+    message = [message MR_inContext:[NSManagedObjectContext MR_defaultContext]];
+    [IMUtil runInGlobalQueue:^{
+        //判断消息是否属于当前会话
+        if([message.conversationId isEqualToString:self.conversation.conversationId]){
+            if(message){
+                [IMUtil runInMainQueue:^{
+                    //加入数据源
+                    [self.messageArray addObject:message];
+                    [self.messageTableView reloadData];
+                    //将列表滑到最底下
+                    [self scrollToBottomAnimated:YES];
+                }];
+            }
+        }
+    }];
+}
+
+#pragma mark - 滑动到最底部
+- (void)scrollToBottomAnimated:(BOOL)animated {
+    NSInteger rows = [self.messageTableView numberOfRowsInSection:0];
+    if (rows > 0) {
+        [self.messageTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:rows - 1 inSection:0]
+                                     atScrollPosition:UITableViewScrollPositionBottom
+                                             animated:animated];
+    }
+}
 
 - (void)handleNavBack{
 
@@ -374,7 +410,7 @@ static NSString * CONVERSATION_CELL = @"conversation_cell";
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
 {
     if(textView.text.length > 0 && [text isEqualToString:@"\n"]){
-        BOOL isGroup = self.conversation.type  == kIMConversationTypeGroup;
+        BOOL isGroup = [self.conversation.type integerValue]  == kIMConversationTypeGroup;
         //用户点击了发送，执行文字消息发送
         [[IMChatService sharedInstance] sendTextMessageToUser:isGroup?@"":[NSString stringWithFormat:@"%zd",self.conversation.user.uid ] withConversationId:self.conversation.conversationId andText:textView.text isGroup:isGroup];
         //清空文字输入

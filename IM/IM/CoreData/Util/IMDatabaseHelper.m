@@ -9,6 +9,7 @@
 #import "IMDatabaseHelper.h"
 
 static IMDatabaseHelper * iMDatabaseHelper;
+#define ENTITY_MESSAGE_KEY            @"IMMessage"
 
 @interface IMDatabaseHelper ()
 
@@ -202,7 +203,15 @@ static IMDatabaseHelper * iMDatabaseHelper;
     return [IMConversation MR_findFirstWithPredicate:[NSPredicate predicateWithFormat:[NSString stringWithFormat:@"conversationId == '%@'",conversationId]] inContext:self.managedObjectContext];
 }
 
-
+#pragma mark - 消息相关
+- (NSArray *)getFriendChatMessagesWithConversationId:(NSString *)conversationId page:(NSInteger)pageNum limit:(NSInteger)count
+{
+    NSSortDescriptor * sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"createTime" ascending:NO];
+    NSArray * resultArray = [self queryObjectArrWithEntityName:ENTITY_MESSAGE_KEY predicateString:[NSString stringWithFormat:@"conversationId == '%@'",conversationId] sortDescriptor:sortDescriptor fetchLimit:count fetchOffset:pageNum * count];
+    resultArray = [IMUtil reverseArray:resultArray];
+    
+    return resultArray;
+}
 
 
 @end

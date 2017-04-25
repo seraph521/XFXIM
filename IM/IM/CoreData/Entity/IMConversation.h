@@ -20,6 +20,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface IMConversation : NSManagedObject
 
+//- (IMConversation *)setupConversationWithContactModel:(IMContactModel *)contactModel;
+//
+//- (IMConversation *)setupConversationWithGroupModel:(IMGroupModel *)groupModel;
+
+- (IMConversation *)setupConversationWithMessage:(IMMessage *)message;
+
+- (IMConversation *)setupConversationWithConversationId:(NSString *)conversationId;
+
+- (void)fetchNewAfterUpdate;
+
 @end
 
 NS_ASSUME_NONNULL_END

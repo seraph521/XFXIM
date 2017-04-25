@@ -2,7 +2,7 @@
 //  IMConversation+CoreDataProperties.h
 //  IM
 //
-//  Created by LT-MacbookPro on 17/4/21.
+//  Created by LT-MacbookPro on 17/4/24.
 //  Copyright © 2017年 XFX. All rights reserved.
 //
 
@@ -16,11 +16,11 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSFetchRequest<IMConversation *> *)fetchRequest;
 
 @property (nullable, nonatomic, copy) NSString *conversationId;
-@property (nonatomic) int16_t is_shied;
+@property (nullable, nonatomic, copy) NSNumber *is_shied;
 @property (nullable, nonatomic, copy) NSString *lastMessageContent;
-@property (nonatomic) int64_t lastUpdateTime;
-@property (nonatomic) int16_t type;
-@property (nonatomic) int16_t unReadCount;
+@property (nullable, nonatomic, copy) NSNumber *lastUpdateTime;
+@property (nullable, nonatomic, copy) NSNumber *type;
+@property (nullable, nonatomic, copy) NSNumber *unReadCount;
 @property (nullable, nonatomic, retain) IMGroup *group;
 @property (nullable, nonatomic, retain) IMUser *user;
 
