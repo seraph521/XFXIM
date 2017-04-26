@@ -10,11 +10,14 @@
 #import "IMChattingViewController.h"
 #import "IMConversation.h"
 #import "IMManager.h"
+#import "IMMessage.h"
 #import "IMLoginUserModel.h"
+#import "IMConversationCell.h"
+#import "BlurBgActionSheetView.h"
 
 static NSString * CONVERSATION_CELL = @"conversation_cell";
 
-@interface IMMessageCenterViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface IMMessageCenterViewController ()<UITableViewDelegate,UITableViewDataSource,IMConversationCellDelegate,BlurBgActionSheetViewDelegate>
 
 @property(nonatomic,strong) UITableView * conversationTableView;
 
@@ -25,6 +28,38 @@ static NSString * CONVERSATION_CELL = @"conversation_cell";
 @end
 
 @implementation IMMessageCenterViewController
+
+- (NSMutableArray *)conversationArray{
+
+    if(_conversationArray == nil){
+    
+        _conversationArray = [NSMutableArray array];
+        
+        if([IMLoginUserModelArchieveTool userInfoUnAchieveFromFile]){
+            NSArray * dbConversationArray = [IMConversation MR_findAllInContext:[NSManagedObjectContext MR_defaultContext]];
+            for (IMConversation * conversaton in dbConversationArray) {
+                if(!conversaton.user && !conversaton.group){
+                    continue;
+                }
+                
+                if([conversaton.type integerValue] == kIMConversationTypeGroup){
+                    continue;
+                }
+                
+                NSPredicate * predicate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"SELF.conversationId == '%@'",conversaton.conversationId]];
+                NSUInteger count = [IMMessage MR_countOfEntitiesWithPredicate:predicate inContext:[NSManagedObjectContext MR_defaultContext]];
+                if(count > 0){
+                    [_conversationArray addObject:conversaton];
+                }
+            }
+            
+            NSSortDescriptor * sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"lastUpdateTime" ascending:NO];
+            _conversationArray = [[_conversationArray sortedArrayUsingDescriptors:@[sortDescriptor]] mutableCopy];
+        }
+
+    }
+    return _conversationArray;
+}
 
 - (NSMutableArray *)friendsArray{
 
@@ -105,7 +140,7 @@ static NSString * CONVERSATION_CELL = @"conversation_cell";
     tableView.dataSource = self;
     tableView.backgroundColor = [UIColor clearColor];
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:CONVERSATION_CELL];
+    [tableView registerClass:[IMConversationCell class] forCellReuseIdentifier:CONVERSATION_CELL];
     [self.view addSubview:tableView];
    
     [tableView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -137,19 +172,24 @@ static NSString * CONVERSATION_CELL = @"conversation_cell";
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
-    return self.friendsArray.count;
+    return self.conversationArray.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
-    IMLoginUserModel * model = self.friendsArray[indexPath.row];
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:CONVERSATION_CELL];
-    cell.textLabel.text = model.uname;
-    cell.backgroundColor = [UIColor clearColor];
+    IMConversation * conversation = self.conversationArray[indexPath.row];
+    IMConversationCell * cell = [tableView dequeueReusableCellWithIdentifier:CONVERSATION_CELL];
+    cell.conversation = conversation;
+    cell.delegate = self;
     return cell;
 }
 
 #pragma mark - UITableViewDelegate
+
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    return [UIView lf_sizeFromIphone6:60];
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
@@ -199,7 +239,29 @@ static NSString * CONVERSATION_CELL = @"conversation_cell";
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
+#pragma mark - GDConversationCellDelegate
 
+- (void)conversationCellClickedMoreFunctionButtonWithConversationAtIndexPath:(NSIndexPath *)indexPath{
+   
+    UIImage * blurImage = [UIImage captureSubView:self.view];
+    blurImage = [UIImage blurImage:blurImage floatBlurLevel:30];
+    
+    
+    BlurBgActionSheetView * sheetView = [[BlurBgActionSheetView alloc] initWithBlurImage:blurImage cancelButtonTitle:@"取消" otherButtontitles:@[@"删除会话"]];
+    sheetView.delegate = self;
+    
+    [sheetView show];
+    
+}
+
+#pragma mark - BlurBgActionSheetViewDelegate
+
+- (void)actionSheetView:(BlurBgActionSheetView *)actionSheet clickButtonAtIndex:(NSInteger)index{
+
+    if (index == 0 ) {
+        NSLog(@"删除会话=====");
+    }
+}
 
 //联系人
 - (void)handleContactButtonEvent{

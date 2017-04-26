@@ -7,8 +7,9 @@
 //
 
 #import "IMBaseMessageCell.h"
-
+#import "IMMessage.h"
 @interface IMBaseMessageCell ()
+
 
 @property (nonatomic,weak) UILabel * timeLabel;
 
@@ -146,6 +147,15 @@
         [self.headerButtonTopConstraint deactivate];
     }
 }
+
+- (void)setMessage:(IMMessage *)message{
+
+    _message = message;
+    
+    self.timeLabel.text = [NSString getChatTimeString:[message.createTime longLongValue]];
+}
+
+
 
 #pragma mark - 点击事件
 - (void)handleBlackSpaceTaped

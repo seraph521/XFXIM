@@ -38,6 +38,13 @@
 		3CBA45481EA757580037500C /* IMChattingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CBA45471EA757580037500C /* IMChattingViewController.m */; };
 		3CBA454B1EA787B00037500C /* EvaGrowingTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CBA454A1EA787B00037500C /* EvaGrowingTextView.m */; };
 		3CBA454E1EA790E60037500C /* IMBaseMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CBA454D1EA790E60037500C /* IMBaseMessageCell.m */; };
+		3CF819F61EB050DB001C7D39 /* NSString+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF819F51EB050DB001C7D39 /* NSString+Category.m */; };
+		3CF819F91EB051BE001C7D39 /* EvaDateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF819F81EB051BE001C7D39 /* EvaDateUtil.m */; };
+		3CF819FC1EB068E2001C7D39 /* TMRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF819FB1EB068E2001C7D39 /* TMRefreshHeader.m */; };
+		3CF819FF1EB06B83001C7D39 /* IMConversationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF819FE1EB06B83001C7D39 /* IMConversationCell.m */; };
+		3CF81A041EB07E9C001C7D39 /* MKNumberBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF81A031EB07E9C001C7D39 /* MKNumberBadgeView.m */; };
+		3CF81A071EB09998001C7D39 /* UIView+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF81A061EB09998001C7D39 /* UIView+Category.m */; };
+		3CF81A0A1EB0C08D001C7D39 /* BlurBgActionSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF81A091EB0C08D001C7D39 /* BlurBgActionSheetView.m */; };
 		3CFF11361EAD97E000C14136 /* GDCacheService.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CFF11351EAD97E000C14136 /* GDCacheService.m */; };
 		FE0F107E8239F947129A9F7A /* libPods-IM.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FD2D74AA990C4FC6B9CF9DC /* libPods-IM.a */; };
 /* End PBXBuildFile section */
@@ -104,6 +111,20 @@
 		3CBA454A1EA787B00037500C /* EvaGrowingTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EvaGrowingTextView.m; sourceTree = "<group>"; };
 		3CBA454C1EA790E60037500C /* IMBaseMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMBaseMessageCell.h; sourceTree = "<group>"; };
 		3CBA454D1EA790E60037500C /* IMBaseMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMBaseMessageCell.m; sourceTree = "<group>"; };
+		3CF819F41EB050DB001C7D39 /* NSString+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Category.h"; sourceTree = "<group>"; };
+		3CF819F51EB050DB001C7D39 /* NSString+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Category.m"; sourceTree = "<group>"; };
+		3CF819F71EB051BE001C7D39 /* EvaDateUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvaDateUtil.h; sourceTree = "<group>"; };
+		3CF819F81EB051BE001C7D39 /* EvaDateUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EvaDateUtil.m; sourceTree = "<group>"; };
+		3CF819FA1EB068E2001C7D39 /* TMRefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMRefreshHeader.h; sourceTree = "<group>"; };
+		3CF819FB1EB068E2001C7D39 /* TMRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMRefreshHeader.m; sourceTree = "<group>"; };
+		3CF819FD1EB06B83001C7D39 /* IMConversationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMConversationCell.h; sourceTree = "<group>"; };
+		3CF819FE1EB06B83001C7D39 /* IMConversationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMConversationCell.m; sourceTree = "<group>"; };
+		3CF81A021EB07E9C001C7D39 /* MKNumberBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKNumberBadgeView.h; sourceTree = "<group>"; };
+		3CF81A031EB07E9C001C7D39 /* MKNumberBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKNumberBadgeView.m; sourceTree = "<group>"; };
+		3CF81A051EB09998001C7D39 /* UIView+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Category.h"; sourceTree = "<group>"; };
+		3CF81A061EB09998001C7D39 /* UIView+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Category.m"; sourceTree = "<group>"; };
+		3CF81A081EB0C08D001C7D39 /* BlurBgActionSheetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlurBgActionSheetView.h; sourceTree = "<group>"; };
+		3CF81A091EB0C08D001C7D39 /* BlurBgActionSheetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlurBgActionSheetView.m; sourceTree = "<group>"; };
 		3CFF11311EAD91F700C14136 /* IMNotificationDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMNotificationDefine.h; sourceTree = "<group>"; };
 		3CFF11341EAD97E000C14136 /* GDCacheService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDCacheService.h; sourceTree = "<group>"; };
 		3CFF11351EAD97E000C14136 /* GDCacheService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDCacheService.m; sourceTree = "<group>"; };
@@ -190,12 +211,18 @@
 		3C4CD7661EA8830A00AB3191 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				3CF819FA1EB068E2001C7D39 /* TMRefreshHeader.h */,
+				3CF819FB1EB068E2001C7D39 /* TMRefreshHeader.m */,
+				3CF819F71EB051BE001C7D39 /* EvaDateUtil.h */,
+				3CF819F81EB051BE001C7D39 /* EvaDateUtil.m */,
 				3CFF11341EAD97E000C14136 /* GDCacheService.h */,
 				3CFF11351EAD97E000C14136 /* GDCacheService.m */,
 				3C4CD7671EA8834100AB3191 /* IMLoginUserModelArchieveTool.h */,
 				3C4CD7681EA8834100AB3191 /* IMLoginUserModelArchieveTool.m */,
 				3C4CD76A1EA8892900AB3191 /* IMUtil.h */,
 				3C4CD76B1EA8892900AB3191 /* IMUtil.m */,
+				3CF81A081EB0C08D001C7D39 /* BlurBgActionSheetView.h */,
+				3CF81A091EB0C08D001C7D39 /* BlurBgActionSheetView.m */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -230,6 +257,7 @@
 		3CBA45041EA6F1A30037500C /* IM */ = {
 			isa = PBXGroup;
 			children = (
+				3CF81A001EB07E70001C7D39 /* ThirdParty */,
 				3CBA45201EA6F6F80037500C /* Main */,
 				3C4CD7271EA84E7C00AB3191 /* CoreData */,
 				3CBA45351EA712C20037500C /* IMModule */,
@@ -335,10 +363,14 @@
 		3CBA45311EA70A750037500C /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				3CF81A051EB09998001C7D39 /* UIView+Category.h */,
+				3CF81A061EB09998001C7D39 /* UIView+Category.m */,
 				3CBA45431EA7425F0037500C /* UIView+LayoutFit.h */,
 				3CBA45441EA7425F0037500C /* UIView+LayoutFit.m */,
 				3CBA45321EA70A820037500C /* UIImage+Category.h */,
 				3CBA45331EA70A820037500C /* UIImage+Category.m */,
+				3CF819F41EB050DB001C7D39 /* NSString+Category.h */,
+				3CF819F51EB050DB001C7D39 /* NSString+Category.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -392,8 +424,28 @@
 				3CBA454D1EA790E60037500C /* IMBaseMessageCell.m */,
 				3C4CD7211EA841B300AB3191 /* IMTextMessageCell.h */,
 				3C4CD7221EA841B300AB3191 /* IMTextMessageCell.m */,
+				3CF819FD1EB06B83001C7D39 /* IMConversationCell.h */,
+				3CF819FE1EB06B83001C7D39 /* IMConversationCell.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		3CF81A001EB07E70001C7D39 /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				3CF81A011EB07E9C001C7D39 /* BadgeView */,
+			);
+			name = ThirdParty;
+			path = User/ThirdParty;
+			sourceTree = "<group>";
+		};
+		3CF81A011EB07E9C001C7D39 /* BadgeView */ = {
+			isa = PBXGroup;
+			children = (
+				3CF81A021EB07E9C001C7D39 /* MKNumberBadgeView.h */,
+				3CF81A031EB07E9C001C7D39 /* MKNumberBadgeView.m */,
+			);
+			path = BadgeView;
 			sourceTree = "<group>";
 		};
 		92C60923B39D964831918ACA /* Frameworks */ = {
@@ -535,23 +587,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CF819F91EB051BE001C7D39 /* EvaDateUtil.m in Sources */,
+				3CF81A0A1EB0C08D001C7D39 /* BlurBgActionSheetView.m in Sources */,
 				3C54F78A1EA9DD70000675C2 /* IMMediaFile+CoreDataProperties.m in Sources */,
 				3CBA454B1EA787B00037500C /* EvaGrowingTextView.m in Sources */,
+				3CF81A041EB07E9C001C7D39 /* MKNumberBadgeView.m in Sources */,
 				3CBA452A1EA6F85C0037500C /* IMLoginViewController.m in Sources */,
 				3C54F7871EA9DD70000675C2 /* IMConversation.m in Sources */,
 				3C4CD7231EA841B300AB3191 /* IMTextMessageCell.m in Sources */,
+				3CF819FC1EB068E2001C7D39 /* TMRefreshHeader.m in Sources */,
 				3C54F7891EA9DD70000675C2 /* IMMediaFile.m in Sources */,
 				3CBA453C1EA713760037500C /* IMManager.m in Sources */,
+				3CF81A071EB09998001C7D39 /* UIView+Category.m in Sources */,
 				3C54F7881EA9DD70000675C2 /* IMConversation+CoreDataProperties.m in Sources */,
 				3CBA45451EA7425F0037500C /* UIView+LayoutFit.m in Sources */,
 				3CBA452F1EA6FD4B0037500C /* IMNavigationController.m in Sources */,
 				3C54F7901EA9DD70000675C2 /* IMUser+CoreDataProperties.m in Sources */,
+				3CF819F61EB050DB001C7D39 /* NSString+Category.m in Sources */,
 				3CFF11361EAD97E000C14136 /* GDCacheService.m in Sources */,
 				3CBA45421EA73CD60037500C /* IMMessageCenterViewController.m in Sources */,
 				3C54F78B1EA9DD70000675C2 /* IMMessage.m in Sources */,
 				3C54F7721EA9DC6A000675C2 /* IM.xcdatamodel in Sources */,
 				3CBA454E1EA790E60037500C /* IMBaseMessageCell.m in Sources */,
 				3C54F78F1EA9DD70000675C2 /* IMUser.m in Sources */,
+				3CF819FF1EB06B83001C7D39 /* IMConversationCell.m in Sources */,
 				3C4CD7691EA8834100AB3191 /* IMLoginUserModelArchieveTool.m in Sources */,
 				3C54F78D1EA9DD70000675C2 /* IMGroup.m in Sources */,
 				3CBA45481EA757580037500C /* IMChattingViewController.m in Sources */,

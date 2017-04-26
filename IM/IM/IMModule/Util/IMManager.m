@@ -166,8 +166,14 @@ static NSString * chattingConversationId;
     IMMessage * textMessage = [IMMessage MR_createEntityInContext:self.managedObjectContext];
     [textMessage setupWithTypedMessage:message];
     NSLog(@"=========消息===%@",message);
-    //发送通知刷新页面
-    [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_RECEIVED_NEWMESSAGE object:nil userInfo:@{@"message":textMessage}];
+    
+    [self.managedObjectContext MR_saveToPersistentStoreWithCompletion:^(BOOL contextDidSave, NSError * _Nullable error) {
+        
+        //发送通知刷新页面
+        [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_RECEIVED_NEWMESSAGE object:nil userInfo:@{@"message":textMessage}];
+        
+    }];
+ 
 }
 
 @end

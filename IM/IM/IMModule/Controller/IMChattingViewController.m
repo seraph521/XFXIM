@@ -11,6 +11,7 @@
 #import "IMBaseMessageCell.h"
 #import "IMTextMessageCell.h"
 #import "IMMessage.h"
+#import "TMRefreshHeader.h"
 
 #define BASE_MESSAGE_CELL @"BASE_MESSAGE_CELL"
 #define TEXT_MESSAGE_CELL @"TEXT_MESSAGE_CELL"
@@ -27,6 +28,9 @@ static NSString * CONVERSATION_CELL = @"conversation_cell";
 @interface IMChattingViewController ()<EvaGrowingTextViewDelegate,UITableViewDelegate,UITableViewDataSource,UITextViewDelegate>{
 
     CGFloat _lastTextHeight;
+    BOOL isFirstLoad;
+    NSInteger _currentPage;
+    NSInteger _needScrollToIndex;
 }
 
 @property(nonatomic,strong) UIView * bottomBar;
@@ -40,6 +44,8 @@ static NSString * CONVERSATION_CELL = @"conversation_cell";
 @property(nonatomic,strong) UIView * lineView;
 
 @property(nonatomic,strong) EvaGrowingTextView * contentTextView;
+
+@property(nonatomic,strong) TMRefreshHeader * refreshHeader;
 
 //聊天消息部分
 @property (nonatomic,strong) NSMutableArray * messageArray;
@@ -75,8 +81,21 @@ static NSString * CONVERSATION_CELL = @"conversation_cell";
     
     [self setupMessageData];
     
+    [self loadChatMessages];
+}
+
+- (void)loadChatMessages{
+
+    isFirstLoad = YES;
+    
+    _currentPage = 0;
+    
+    NSArray * dbMessageArray = [[IMDatabaseHelper sharedInstance] getFriendChatMessagesWithConversationId:self.conversation.conversationId page:_currentPage limit:10];
+    _currentPage++;
+    [self.messageArray addObjectsFromArray:dbMessageArray];
     
 }
+
 
 -(void)setupBackgroundImage{
 
@@ -158,6 +177,40 @@ static NSString * CONVERSATION_CELL = @"conversation_cell";
         make.width.mas_equalTo(SCREEN_WIDTH);
         make.bottom.equalTo(self.inputBar.mas_top);
     }];
+    
+    //刷新控件
+    TMRefreshHeader * header = [TMRefreshHeader headerWithRefreshingBlock:^{
+        [IMUtil runInMainQueue:^{
+            NSMutableArray * newMessages = [[[IMDatabaseHelper sharedInstance] getFriendChatMessagesWithConversationId:self.conversation.conversationId page:_currentPage limit:10] mutableCopy];
+            
+            if(newMessages.count == 1){
+                IMMessage * lastLoadMessage = [newMessages lastObject];
+                IMMessage * lastMessage = [self.messageArray lastObject];
+                if([lastLoadMessage.messageId isEqualToString:lastMessage.messageId]){
+                    [self.refreshHeader endRefreshing];
+                    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreWithCompletion:nil];
+                    return;
+                }
+            }
+            _currentPage++;
+            
+            _needScrollToIndex = newMessages.count;
+            
+            if(newMessages.count > 0){
+                [newMessages addObjectsFromArray:self.messageArray];
+                self.messageArray = newMessages;
+                
+                [self.messageTableView reloadData];
+                
+                if(self.messageArray.count > 0){
+                    [self.messageTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:_needScrollToIndex inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+                }
+            }
+            [self.refreshHeader endRefreshing];
+        }];
+    }];
+    [header attachToScrollView:messageTableView];
+    self.refreshHeader = header;
 }
 
 - (void)setupBottomView{
@@ -297,6 +350,12 @@ static NSString * CONVERSATION_CELL = @"conversation_cell";
     
     IMMessage * message = self.messageArray[indexPath.row];
     IMTextMessageCell * textCell = [tableView dequeueReusableCellWithIdentifier:TEXT_MESSAGE_CELL];
+    if([message.fromPeerId integerValue] == [IMLoginUserModelArchieveTool userInfoUnAchieveFromFile].uid){
+    
+        textCell.isLeft = NO;
+    }else{
+       textCell.isLeft = YES;
+    }
     
     textCell.message = message;
     return textCell;

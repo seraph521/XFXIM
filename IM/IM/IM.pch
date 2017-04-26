@@ -48,6 +48,8 @@
 //分类
 #import "UIImage+Category.h"
 #import "UIView+LayoutFit.h"
+#import "NSString+Category.h"
+#import "UIView+Category.h"
 
 
 // 单例模式
