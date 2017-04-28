@@ -14,6 +14,8 @@
 
 @interface UIImage (Category)
 
++ (UIImage *)imageOriginalWithName:(NSString *)imageName;
+
 + (UIImage *)getImageWithImageNamed:(NSString *)imageName;
 + (UIImage *)getPureImageWithColor:(UIColor *)color;
 + (UIImage *)imageFromColor:(UIColor *)color forSize:(CGSize)size withCornerRadius:(CGFloat)radius;

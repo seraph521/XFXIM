@@ -47,4 +47,9 @@
 
 }
 
+- (BOOL)isNotEmpty
+{
+    return (self && ![self isKindOfClass:[NSNull class]] && ![self isEqualToString:@""]);
+}
+
 @end

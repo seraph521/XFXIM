@@ -12,4 +12,6 @@
 
 + (NSString *)getChatTimeString:(int64_t)timeStamp;
 
+- (BOOL)isNotEmpty;
+
 @end

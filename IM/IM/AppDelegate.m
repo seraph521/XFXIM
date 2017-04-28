@@ -14,6 +14,7 @@
 #import "IMLoginUserModelArchieveTool.h"
 #import "IMManager.h"
 #import "IMCoreDataStack.h"
+#import "IMTabBarController.h"
 
 #define APP_ID   @"qXhjKySMV4NVFU04dL7x4yQW-gzGzoHsz"
 #define APP_KEY  @"eYLez0YSFraK26DH1yXw3V1Y"
@@ -30,9 +31,10 @@
     
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    IMLoginViewController * loginViewController = [[IMLoginViewController alloc] init];
-    IMNavigationController * navigationController = [[IMNavigationController alloc] initWithRootViewController:loginViewController];
-    self.window.rootViewController = navigationController;
+    IMTabBarController * tabBarController = [[IMTabBarController alloc] init];
+   // IMLoginViewController * loginViewController = [[IMLoginViewController alloc] init];
+   //  IMNavigationController * navigationController = [[IMNavigationController alloc] initWithRootViewController:loginViewController];
+    self.window.rootViewController = tabBarController;
     
     [self.window makeKeyAndVisible];
     

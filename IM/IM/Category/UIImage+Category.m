@@ -14,6 +14,14 @@
 
 @implementation UIImage (Category)
 
++ (UIImage *)imageOriginalWithName:(NSString *)imageName
+{
+    UIImage *image = [UIImage imageNamed:imageName];
+    
+    return [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+}
+
 + (UIImage *)getImageWithImageNamed:(NSString *)imageName
 {
     if(imageName){

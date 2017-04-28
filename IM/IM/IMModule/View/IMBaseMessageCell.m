@@ -10,7 +10,6 @@
 #import "IMMessage.h"
 @interface IMBaseMessageCell ()
 
-
 @property (nonatomic,weak) UILabel * timeLabel;
 
 @property (nonatomic,strong) MASConstraint * timeViewConstraint;

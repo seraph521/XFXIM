@@ -25,6 +25,13 @@
 		3C54F78E1EA9DD70000675C2 /* IMGroup+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C54F7821EA9DD70000675C2 /* IMGroup+CoreDataProperties.m */; };
 		3C54F78F1EA9DD70000675C2 /* IMUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C54F7841EA9DD70000675C2 /* IMUser.m */; };
 		3C54F7901EA9DD70000675C2 /* IMUser+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C54F7861EA9DD70000675C2 /* IMUser+CoreDataProperties.m */; };
+		3C852CA71EB2CD20000E5AD9 /* IMTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C852CA61EB2CD20000E5AD9 /* IMTabBarController.m */; };
+		3C852CAA1EB2CE86000E5AD9 /* IMContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C852CA91EB2CE86000E5AD9 /* IMContactsViewController.m */; };
+		3C852CAD1EB2CEA3000E5AD9 /* IMZoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C852CAC1EB2CEA3000E5AD9 /* IMZoneViewController.m */; };
+		3C852CB31EB2EBA6000E5AD9 /* IMSlideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C852CB21EB2EBA6000E5AD9 /* IMSlideViewController.m */; };
+		3C852CB61EB31953000E5AD9 /* IMSlideViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C852CB51EB31953000E5AD9 /* IMSlideViewCell.m */; };
+		3C852CB91EB31F8A000E5AD9 /* IMSlideHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C852CB81EB31F8A000E5AD9 /* IMSlideHeaderView.m */; };
+		3C852CBC1EB3388A000E5AD9 /* IMSlideModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C852CBB1EB3388A000E5AD9 /* IMSlideModel.m */; };
 		3CBA45071EA6F1A30037500C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CBA45061EA6F1A30037500C /* main.m */; };
 		3CBA450A1EA6F1A30037500C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CBA45091EA6F1A30037500C /* AppDelegate.m */; };
 		3CBA45121EA6F1A30037500C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CBA45111EA6F1A30037500C /* Assets.xcassets */; };
@@ -45,6 +52,8 @@
 		3CF81A041EB07E9C001C7D39 /* MKNumberBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF81A031EB07E9C001C7D39 /* MKNumberBadgeView.m */; };
 		3CF81A071EB09998001C7D39 /* UIView+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF81A061EB09998001C7D39 /* UIView+Category.m */; };
 		3CF81A0A1EB0C08D001C7D39 /* BlurBgActionSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF81A091EB0C08D001C7D39 /* BlurBgActionSheetView.m */; };
+		3CF81A0D1EB19658001C7D39 /* EvaContacts.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF81A0C1EB19658001C7D39 /* EvaContacts.m */; };
+		3CF81A101EB19681001C7D39 /* EVAContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF81A0F1EB19681001C7D39 /* EVAContact.m */; };
 		3CFF11361EAD97E000C14136 /* GDCacheService.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CFF11351EAD97E000C14136 /* GDCacheService.m */; };
 		FE0F107E8239F947129A9F7A /* libPods-IM.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FD2D74AA990C4FC6B9CF9DC /* libPods-IM.a */; };
 /* End PBXBuildFile section */
@@ -85,6 +94,20 @@
 		3C54F7841EA9DD70000675C2 /* IMUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMUser.m; sourceTree = "<group>"; };
 		3C54F7851EA9DD70000675C2 /* IMUser+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IMUser+CoreDataProperties.h"; sourceTree = "<group>"; };
 		3C54F7861EA9DD70000675C2 /* IMUser+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IMUser+CoreDataProperties.m"; sourceTree = "<group>"; };
+		3C852CA51EB2CD20000E5AD9 /* IMTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMTabBarController.h; sourceTree = "<group>"; };
+		3C852CA61EB2CD20000E5AD9 /* IMTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMTabBarController.m; sourceTree = "<group>"; };
+		3C852CA81EB2CE86000E5AD9 /* IMContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMContactsViewController.h; sourceTree = "<group>"; };
+		3C852CA91EB2CE86000E5AD9 /* IMContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMContactsViewController.m; sourceTree = "<group>"; };
+		3C852CAB1EB2CEA3000E5AD9 /* IMZoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMZoneViewController.h; sourceTree = "<group>"; };
+		3C852CAC1EB2CEA3000E5AD9 /* IMZoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMZoneViewController.m; sourceTree = "<group>"; };
+		3C852CB11EB2EBA6000E5AD9 /* IMSlideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMSlideViewController.h; sourceTree = "<group>"; };
+		3C852CB21EB2EBA6000E5AD9 /* IMSlideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMSlideViewController.m; sourceTree = "<group>"; };
+		3C852CB41EB31953000E5AD9 /* IMSlideViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMSlideViewCell.h; sourceTree = "<group>"; };
+		3C852CB51EB31953000E5AD9 /* IMSlideViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMSlideViewCell.m; sourceTree = "<group>"; };
+		3C852CB71EB31F8A000E5AD9 /* IMSlideHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMSlideHeaderView.h; sourceTree = "<group>"; };
+		3C852CB81EB31F8A000E5AD9 /* IMSlideHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMSlideHeaderView.m; sourceTree = "<group>"; };
+		3C852CBA1EB3388A000E5AD9 /* IMSlideModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMSlideModel.h; sourceTree = "<group>"; };
+		3C852CBB1EB3388A000E5AD9 /* IMSlideModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMSlideModel.m; sourceTree = "<group>"; };
 		3CBA45021EA6F1A30037500C /* IM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CBA45061EA6F1A30037500C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3CBA45081EA6F1A30037500C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../../AppDelegate.h; sourceTree = "<group>"; };
@@ -125,6 +148,10 @@
 		3CF81A061EB09998001C7D39 /* UIView+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Category.m"; sourceTree = "<group>"; };
 		3CF81A081EB0C08D001C7D39 /* BlurBgActionSheetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlurBgActionSheetView.h; sourceTree = "<group>"; };
 		3CF81A091EB0C08D001C7D39 /* BlurBgActionSheetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlurBgActionSheetView.m; sourceTree = "<group>"; };
+		3CF81A0B1EB19658001C7D39 /* EvaContacts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvaContacts.h; sourceTree = "<group>"; };
+		3CF81A0C1EB19658001C7D39 /* EvaContacts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EvaContacts.m; sourceTree = "<group>"; };
+		3CF81A0E1EB19681001C7D39 /* EVAContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVAContact.h; sourceTree = "<group>"; };
+		3CF81A0F1EB19681001C7D39 /* EVAContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EVAContact.m; sourceTree = "<group>"; };
 		3CFF11311EAD91F700C14136 /* IMNotificationDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMNotificationDefine.h; sourceTree = "<group>"; };
 		3CFF11341EAD97E000C14136 /* GDCacheService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDCacheService.h; sourceTree = "<group>"; };
 		3CFF11351EAD97E000C14136 /* GDCacheService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDCacheService.m; sourceTree = "<group>"; };
@@ -330,6 +357,10 @@
 			children = (
 				3CBA452D1EA6FD4B0037500C /* IMNavigationController.h */,
 				3CBA452E1EA6FD4B0037500C /* IMNavigationController.m */,
+				3C852CA51EB2CD20000E5AD9 /* IMTabBarController.h */,
+				3C852CA61EB2CD20000E5AD9 /* IMTabBarController.m */,
+				3C852CB11EB2EBA6000E5AD9 /* IMSlideViewController.h */,
+				3C852CB21EB2EBA6000E5AD9 /* IMSlideViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -339,6 +370,8 @@
 			children = (
 				3C4CD7631EA8819800AB3191 /* IMLoginUserModel.h */,
 				3C4CD7641EA8819800AB3191 /* IMLoginUserModel.m */,
+				3C852CBA1EB3388A000E5AD9 /* IMSlideModel.h */,
+				3C852CBB1EB3388A000E5AD9 /* IMSlideModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -346,6 +379,10 @@
 		3CBA45231EA6F6F80037500C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3C852CB41EB31953000E5AD9 /* IMSlideViewCell.h */,
+				3C852CB51EB31953000E5AD9 /* IMSlideViewCell.m */,
+				3C852CB71EB31F8A000E5AD9 /* IMSlideHeaderView.h */,
+				3C852CB81EB31F8A000E5AD9 /* IMSlideHeaderView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -393,6 +430,10 @@
 				3CBA45411EA73CD60037500C /* IMMessageCenterViewController.m */,
 				3CBA45461EA757580037500C /* IMChattingViewController.h */,
 				3CBA45471EA757580037500C /* IMChattingViewController.m */,
+				3C852CA81EB2CE86000E5AD9 /* IMContactsViewController.h */,
+				3C852CA91EB2CE86000E5AD9 /* IMContactsViewController.m */,
+				3C852CAB1EB2CEA3000E5AD9 /* IMZoneViewController.h */,
+				3C852CAC1EB2CEA3000E5AD9 /* IMZoneViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -400,6 +441,8 @@
 		3CBA45371EA712C20037500C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3CF81A0E1EB19681001C7D39 /* EVAContact.h */,
+				3CF81A0F1EB19681001C7D39 /* EVAContact.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -407,6 +450,8 @@
 		3CBA45381EA712C20037500C /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				3CF81A0B1EB19658001C7D39 /* EvaContacts.h */,
+				3CF81A0C1EB19658001C7D39 /* EvaContacts.m */,
 				3CBA453A1EA713760037500C /* IMManager.h */,
 				3CBA453B1EA713760037500C /* IMManager.m */,
 				3C4CD7241EA846C400AB3191 /* IMChatService.h */,
@@ -589,19 +634,26 @@
 			files = (
 				3CF819F91EB051BE001C7D39 /* EvaDateUtil.m in Sources */,
 				3CF81A0A1EB0C08D001C7D39 /* BlurBgActionSheetView.m in Sources */,
+				3C852CB61EB31953000E5AD9 /* IMSlideViewCell.m in Sources */,
 				3C54F78A1EA9DD70000675C2 /* IMMediaFile+CoreDataProperties.m in Sources */,
 				3CBA454B1EA787B00037500C /* EvaGrowingTextView.m in Sources */,
 				3CF81A041EB07E9C001C7D39 /* MKNumberBadgeView.m in Sources */,
 				3CBA452A1EA6F85C0037500C /* IMLoginViewController.m in Sources */,
 				3C54F7871EA9DD70000675C2 /* IMConversation.m in Sources */,
 				3C4CD7231EA841B300AB3191 /* IMTextMessageCell.m in Sources */,
+				3C852CB31EB2EBA6000E5AD9 /* IMSlideViewController.m in Sources */,
 				3CF819FC1EB068E2001C7D39 /* TMRefreshHeader.m in Sources */,
 				3C54F7891EA9DD70000675C2 /* IMMediaFile.m in Sources */,
 				3CBA453C1EA713760037500C /* IMManager.m in Sources */,
+				3C852CBC1EB3388A000E5AD9 /* IMSlideModel.m in Sources */,
 				3CF81A071EB09998001C7D39 /* UIView+Category.m in Sources */,
+				3CF81A101EB19681001C7D39 /* EVAContact.m in Sources */,
 				3C54F7881EA9DD70000675C2 /* IMConversation+CoreDataProperties.m in Sources */,
 				3CBA45451EA7425F0037500C /* UIView+LayoutFit.m in Sources */,
+				3C852CB91EB31F8A000E5AD9 /* IMSlideHeaderView.m in Sources */,
 				3CBA452F1EA6FD4B0037500C /* IMNavigationController.m in Sources */,
+				3C852CAD1EB2CEA3000E5AD9 /* IMZoneViewController.m in Sources */,
+				3C852CAA1EB2CE86000E5AD9 /* IMContactsViewController.m in Sources */,
 				3C54F7901EA9DD70000675C2 /* IMUser+CoreDataProperties.m in Sources */,
 				3CF819F61EB050DB001C7D39 /* NSString+Category.m in Sources */,
 				3CFF11361EAD97E000C14136 /* GDCacheService.m in Sources */,
@@ -623,7 +675,9 @@
 				3C4CD7701EA8937E00AB3191 /* IMCoreDataStack.m in Sources */,
 				3C4CD7651EA8819800AB3191 /* IMLoginUserModel.m in Sources */,
 				3C54F78E1EA9DD70000675C2 /* IMGroup+CoreDataProperties.m in Sources */,
+				3C852CA71EB2CD20000E5AD9 /* IMTabBarController.m in Sources */,
 				3CBA45341EA70A820037500C /* UIImage+Category.m in Sources */,
+				3CF81A0D1EB19658001C7D39 /* EvaContacts.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
