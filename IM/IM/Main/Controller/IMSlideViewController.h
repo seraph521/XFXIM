@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "IMNavigationController.h"
 
-@interface IMSlideViewController : IMNavigationController
+@interface IMSlideViewController : UIViewController
 
 @end

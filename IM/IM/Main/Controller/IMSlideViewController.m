@@ -12,15 +12,14 @@
 #import "IMSlideModel.h"
 
 #define MAX_SLIDE_WIDTH SCREEN_WIDTH * 0.8
+
 static NSString * IMSLIDEVIEW_CELL =  @"IMSlideView_cell";
 
-@interface IMSlideViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface IMSlideViewController ()<UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate>
 
 @property(nonatomic,strong) UITableView * tableView;
 
 @property(nonatomic,strong) UIView * headerView;
-
-@property(nonatomic,strong) NSTimer * timer;
 
 @property(nonatomic,strong) NSMutableArray * itemArray;
 
@@ -66,20 +65,18 @@ static NSString * IMSLIDEVIEW_CELL =  @"IMSlideView_cell";
     
     [self setupView];
     
-   // [self setupTime];
 }
 
 - (void)setupView{
 
     self.view.backgroundColor = [UIColor whiteColor];
-    self.navigationBarHidden = YES;
     
     UITableView * tableView = [[UITableView alloc] init];
     [tableView registerClass:[IMSlideViewCell class] forCellReuseIdentifier:IMSLIDEVIEW_CELL];
     tableView.frame = CGRectMake(0, 0, MAX_SLIDE_WIDTH, SCREEN_HEIGHT);
     tableView.delegate = self;
     tableView.dataSource = self;
-    tableView.scrollEnabled = NO;
+    //tableView.scrollEnabled = NO;
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:tableView];
     self.tableView = tableView;
@@ -91,18 +88,6 @@ static NSString * IMSLIDEVIEW_CELL =  @"IMSlideView_cell";
     
 }
 
-- (void)setupTime{
-
-    NSTimer * timer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(scrollVewAnimation) userInfo:nil repeats:YES];
-    [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
-    self.timer = timer;
-    
-}
-
-- (void)scrollVewAnimation{
-
-    NSLog(@"============");
-}
 
 #pragma mark - UITableViewDataSouce
 
@@ -121,9 +106,21 @@ static NSString * IMSLIDEVIEW_CELL =  @"IMSlideView_cell";
 
 #pragma mark - UITableViewDelegate
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    return [UIView lf_sizeFromIphone6:60];
+}
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
     NSLog(@"=====didSelectRowAtIndexPath=");
 }
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+
+    NSLog(@"scrollViewDidScroll");
+}
+
 
 @end

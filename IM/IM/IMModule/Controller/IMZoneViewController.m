@@ -16,9 +16,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupChildView];
 }
 
 
-
+- (void)setupChildView{
+    
+    self.view.backgroundColor = [UIColor purpleColor];
+}
 
 @end

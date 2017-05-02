@@ -28,6 +28,8 @@
 
 @property(nonatomic,strong) UIView * shadowView;
 
+@property(nonatomic,strong) IMSlideViewController * slideViewController;
+
 @end
 
 @implementation IMTabBarController
@@ -60,14 +62,8 @@
 
 - (void)setupSlideView{
     
-    
-   // self.mainView = self.view.subviews[0];
-   // self.tabBarView = self.view.subviews[1];
-    
-    
     self.mainView = [[UIView alloc] init];
     self.mainView.frame = self.view.bounds;
-    [self.view addSubview:self.mainView];
     
     UIView * subView0 = self.view.subviews[0];
     UIView * subView1 = self.view.subviews[1];
@@ -75,16 +71,15 @@
     [self.mainView addSubview:subView0];
     [self.mainView addSubview:subView1];
     
-    
-    
+    [self.view addSubview:self.mainView];
+
     //侧滑界面
     IMSlideViewController * slideViewController = [[IMSlideViewController alloc] init];
-    
     UIView * slideView = slideViewController.view;
     slideView.frame = CGRectMake(-MAX_SLIDE_WIDTH, 0, MAX_SLIDE_WIDTH , SCREEN_HEIGHT);
     self.slideView = slideView;
     [self.view addSubview:slideView];
-    
+    self.slideViewController = slideViewController;
     //主界面遮罩
     
     UIView * shadowView = [[UIView alloc] init];
@@ -99,7 +94,7 @@
     [shadowView addGestureRecognizer:tapGesture];
 
     UIPanGestureRecognizer * panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];
-    [self.view addGestureRecognizer:panGesture];
+    [self.mainView addGestureRecognizer:panGesture];
 }
 
 
@@ -167,9 +162,6 @@
 }
 
 
-
-
-
 - (void)setupChildController{
 
     IMMessageCenterViewController * messageCenterVc = [[IMMessageCenterViewController alloc] init];
@@ -180,11 +172,10 @@
     
     IMZoneViewController * zoneVc = [[IMZoneViewController alloc] init];
     IMNavigationController * nav3 = [[IMNavigationController alloc] initWithRootViewController:zoneVc];
-    
+        
     [self addChildViewController:nav1];
     [self addChildViewController:nav2];
     [self addChildViewController:nav3];
-    
 }
 
 - (void)setupTabBar{

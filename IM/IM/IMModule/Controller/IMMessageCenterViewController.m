@@ -93,6 +93,7 @@ static NSString * CONVERSATION_CELL = @"conversation_cell";
     [self setupTableView];
     
     [self setupContactButtons];
+    
 }
 
 

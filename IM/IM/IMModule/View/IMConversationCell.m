@@ -65,6 +65,8 @@
         moreFunctionButtonWidth = [UIImage imageNamed:@"more_function_icon"].size.width + [UIView lf_sizeFromIphone6:14];
         
         UIImageView * avatarImageView = [[UIImageView alloc] init];
+        avatarImageView.layer.cornerRadius = [UIView lf_sizeFromIphone6:20];
+        avatarImageView.layer.masksToBounds = YES;
         [dragView addSubview:avatarImageView];
         
         [avatarImageView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -75,7 +77,7 @@
         }];
         self.avatarImageView = avatarImageView;
         
-        self.avatarImageView.backgroundColor = [UIColor redColor];
+        self.avatarImageView.backgroundColor = [UIColor orangeColor];
         
         UILabel * nickNameLabel = [[UILabel alloc] init];
         nickNameLabel.font = [UIFont systemFontOfSize:14];

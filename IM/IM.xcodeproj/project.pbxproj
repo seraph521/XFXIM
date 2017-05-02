@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C2F84DE1EB87B23004BB7C1 /* IMContactsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C2F84DD1EB87B23004BB7C1 /* IMContactsCell.m */; };
+		3C2F84E11EB87B73004BB7C1 /* IMContactsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C2F84E01EB87B73004BB7C1 /* IMContactsModel.m */; };
 		3C4CD7231EA841B300AB3191 /* IMTextMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4CD7221EA841B300AB3191 /* IMTextMessageCell.m */; };
 		3C4CD7261EA846C400AB3191 /* IMChatService.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4CD7251EA846C400AB3191 /* IMChatService.m */; };
 		3C4CD7441EA8661100AB3191 /* IMDatabaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4CD7431EA8661100AB3191 /* IMDatabaseHelper.m */; };
@@ -59,6 +61,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C2F84DC1EB87B23004BB7C1 /* IMContactsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMContactsCell.h; sourceTree = "<group>"; };
+		3C2F84DD1EB87B23004BB7C1 /* IMContactsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMContactsCell.m; sourceTree = "<group>"; };
+		3C2F84DF1EB87B73004BB7C1 /* IMContactsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMContactsModel.h; sourceTree = "<group>"; };
+		3C2F84E01EB87B73004BB7C1 /* IMContactsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMContactsModel.m; sourceTree = "<group>"; };
 		3C4CD7211EA841B300AB3191 /* IMTextMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMTextMessageCell.h; sourceTree = "<group>"; };
 		3C4CD7221EA841B300AB3191 /* IMTextMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMTextMessageCell.m; sourceTree = "<group>"; };
 		3C4CD7241EA846C400AB3191 /* IMChatService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMChatService.h; sourceTree = "<group>"; };
@@ -443,6 +449,8 @@
 			children = (
 				3CF81A0E1EB19681001C7D39 /* EVAContact.h */,
 				3CF81A0F1EB19681001C7D39 /* EVAContact.m */,
+				3C2F84DF1EB87B73004BB7C1 /* IMContactsModel.h */,
+				3C2F84E01EB87B73004BB7C1 /* IMContactsModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -471,6 +479,8 @@
 				3C4CD7221EA841B300AB3191 /* IMTextMessageCell.m */,
 				3CF819FD1EB06B83001C7D39 /* IMConversationCell.h */,
 				3CF819FE1EB06B83001C7D39 /* IMConversationCell.m */,
+				3C2F84DC1EB87B23004BB7C1 /* IMContactsCell.h */,
+				3C2F84DD1EB87B23004BB7C1 /* IMContactsCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -634,6 +644,7 @@
 			files = (
 				3CF819F91EB051BE001C7D39 /* EvaDateUtil.m in Sources */,
 				3CF81A0A1EB0C08D001C7D39 /* BlurBgActionSheetView.m in Sources */,
+				3C2F84E11EB87B73004BB7C1 /* IMContactsModel.m in Sources */,
 				3C852CB61EB31953000E5AD9 /* IMSlideViewCell.m in Sources */,
 				3C54F78A1EA9DD70000675C2 /* IMMediaFile+CoreDataProperties.m in Sources */,
 				3CBA454B1EA787B00037500C /* EvaGrowingTextView.m in Sources */,
@@ -662,6 +673,7 @@
 				3C54F7721EA9DC6A000675C2 /* IM.xcdatamodel in Sources */,
 				3CBA454E1EA790E60037500C /* IMBaseMessageCell.m in Sources */,
 				3C54F78F1EA9DD70000675C2 /* IMUser.m in Sources */,
+				3C2F84DE1EB87B23004BB7C1 /* IMContactsCell.m in Sources */,
 				3CF819FF1EB06B83001C7D39 /* IMConversationCell.m in Sources */,
 				3C4CD7691EA8834100AB3191 /* IMLoginUserModelArchieveTool.m in Sources */,
 				3C54F78D1EA9DD70000675C2 /* IMGroup.m in Sources */,
